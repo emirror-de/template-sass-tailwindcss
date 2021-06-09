@@ -1,0 +1,42 @@
+figure {
+    @extend .bg-gray-100;
+    @extend .rounded-xl;
+    @extend .p-8;
+    @extend .md\:flex;
+    @extend .md\:p-0;
+
+    img {
+        @extend .w-32;
+        @extend .h-32;
+        @extend .rounded-full;
+        @extend .mx-auto;
+        @extend .md\:w-48;
+        @extend .md\:h-auto;
+        @extend .md\:rounded-none;
+    }
+
+    & > div {
+        @extend .pt-6;
+        @extend .text-center;
+        @extend .space-y-4;
+        @extend .md\:p-8;
+        @extend .md\:text-left;
+
+        blockquote p {
+            @extend .text-lg;
+            @extend .font-semibold;
+        }
+
+        figcaption {
+            @extend .font-medium;
+
+            div.name {
+                @extend .text-indigo-600;
+            }
+
+            div.work-role {
+                @extend .text-gray-500;
+            }
+        }
+    }
+}
