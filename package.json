@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "build-tailwind": "npx tailwindcss-cli@latest build -o build/tailwind.css",
-    "concat-css": "concat -o build/main.concat.scss scss/main.scss build/tailwind.css",
+    "concat-css": "concat -o build/main.concat.scss build/tailwind.css scss/main.scss",
     "compile-sass": "node-sass build/main.concat.scss public_html/css/main.css",
-    "build": "npm run build-tailwind && npm run concat-css && npm run compile-sass"
+    "purge-css": "npx purgecss --config ./purgecss.config.js",
+    "build": "npm run build-tailwind && npm run concat-css && npm run compile-sass",
+    "build-prod": "npm run build-tailwind && npm run concat-css && npm run compile-sass && npm run purge-css"
   },
   "author": "Lewin Probst <info@emirror.de>",
   "license": "MIT",
@@ -19,6 +21,7 @@
   "dependencies": {
     "concat": "^1.0.3",
     "http-server": "^0.12.3",
-    "node-sass": "^6.0.0"
+    "node-sass": "^6.0.0",
+    "purgecss": "^3.1.3"
   }
 }
